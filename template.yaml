@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Prism-BE aws Lambda server
+
+Globals:
+  Function:
+    Timeout: 60
+#    Environment:
+#      Variables:
+#        DATABASE_ENDPOINT: !Ref DatabaseEndpoint
+
+#Parameters:
+#  DatabaseEndpoint:
+#    Description: 데이터베이스엔드포인트
+#    Type: String
+
+Resources:
+  SpringLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.prismworks.prism.StreamLambdaHandler::handleRequest
+      Runtime: java17
+      CodeUri: .
+      MemorySize: 512
+      Timeout: 60
+      Architectures:
+        - x86_64
+      SnapStart:
+        ApplyOn: PublishedVersions
+      AutoPublishAlias: "prod"
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        SpringLambdaFunction:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
