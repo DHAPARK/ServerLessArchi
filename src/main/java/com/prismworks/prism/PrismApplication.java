@@ -17,15 +17,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 public class PrismApplication {
 
     @Bean
-    public HandlerMapping handlerMapping() {
-        return new RequestMappingHandlerMapping();
-    }
-
-    @Bean
-    public HandlerAdapter handlerAdapter() {
-        return new RequestMappingHandlerAdapter();
-    }
-    @Bean
     public ObjectMapper getObjectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
