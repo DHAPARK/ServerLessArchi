@@ -5,14 +5,6 @@ Description: Prism-BE aws Lambda server
 Globals:
   Function:
     Timeout: 60
-#    Environment:
-#      Variables:
-#        DATABASE_ENDPOINT: !Ref DatabaseEndpoint
-
-#Parameters:
-#  DatabaseEndpoint:
-#    Description: 데이터베이스엔드포인트
-#    Type: String
 
 Resources:
   SpringLambdaFunction:
