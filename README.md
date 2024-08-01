@@ -4,11 +4,11 @@ follow the read. (따라해주세요)
 
 Required Installation (필수 설치)
 sam,aws-cli 
-![image](https://github.com/user-attachments/assets/a884d454-9285-48c0-a0ff-bfe31e08ae96)
+![image](https://github.com/user-attachments/assets/5b4b2f9e-6005-464a-904a-2f4b6ffa37e8)
 
 
 sam build in the same directory below(하단 동일 경로에서 sam build)
-![image](https://github.com/user-attachments/assets/5b4b2f9e-6005-464a-904a-2f4b6ffa37e8)
+![image](https://github.com/user-attachments/assets/eb8a103b-df25-4d60-a307-838ea3d01cc9)
 
 
 CI/CD Sequence
@@ -16,7 +16,8 @@ CI/CD Sequence
 
 After completing sam build in the same directory below, proceed with sam deploy (initially, you need to work with sam build --guided). (하단 동일 경로에서 sam build 완료 후 sam deploy (처음엔 sam build --guided로 작업 필요))
 Write the same below and then deploy. (하단 동일하게 작성 후 배포)
-![image](https://github.com/user-attachments/assets/eb8a103b-df25-4d60-a307-838ea3d01cc9)
+![image](https://github.com/user-attachments/assets/fa3778e6-cc4d-4f4b-8240-667ca127ba37)
+
 
 CI/CD Structure(CI/CD 구조)
 Build file is uploaded to S3. (build 파일 S3에 업로드	됨)	
@@ -37,6 +38,5 @@ Track server execution logs in CloudWatch. (서버 실행 로그 추적 cloudwat
 
 Track logs during the sam deploy process (track in CloudFormation). (sam deploy 과정에서 로그 추적 (cloudformation 에서 추적))	
 ![image](https://github.com/user-attachments/assets/220feb6e-d74b-4990-8b84-261bf640f70e)
-
 
 
